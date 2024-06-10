@@ -14,3 +14,6 @@ export const signInInputs = z.object({
     .string()
     .min(6, { message: 'Password must be at least 6 characters long' }),
 });
+
+export type SignupInput = z.infer<typeof signUpInputs>;
+export type SigninInput = z.infer<typeof signInInputs>;
