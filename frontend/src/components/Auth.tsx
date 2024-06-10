@@ -19,7 +19,7 @@ export default function Auth({ type }: { type: 'signup' | 'signin' }) {
       );
       const jwt = response.data;
       localStorage.setItem('token', jwt);
-      navigate('/task/bulk');
+      navigate('/tasks');
     } catch (error) {
       alert('Error while logging in ' + error);
     }
