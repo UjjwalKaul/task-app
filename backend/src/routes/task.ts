@@ -24,7 +24,7 @@ taskRouter.use('/*', async (c, next) => {
       return c.json({ message: 'Unauthorized' });
     }
   } catch (error) {}
-  next();
+  await next();
 });
 
 taskRouter.get('/bulk', async (c) => {
