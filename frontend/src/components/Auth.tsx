@@ -57,9 +57,7 @@ export default function Auth({ type }: { type: 'signup' | 'signin' }) {
               label="Email ID"
               placeholder="email@gmail.com"
               onChange={(e) => {
-                setPostInputs((prev) => {
-                  return { ...prev, email: e.target.value };
-                });
+                setPostInputs({ ...postInputs, email: e.target.value });
               }}
             />
             <LabelledInput
@@ -67,9 +65,7 @@ export default function Auth({ type }: { type: 'signup' | 'signin' }) {
               type="password"
               placeholder="******"
               onChange={(e) => {
-                setPostInputs((prev) => {
-                  return { ...prev, password: e.target.value };
-                });
+                setPostInputs({ ...postInputs, password: e.target.value });
               }}
             />
             <button
