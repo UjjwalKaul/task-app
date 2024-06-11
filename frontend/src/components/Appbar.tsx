@@ -4,7 +4,7 @@ export default function AppBar() {
   return (
     <div className="border-b border-slate-300 flex justify-between px-10 py-4">
       <Link
-        to={'/blogs'}
+        to={'/tasks'}
         className="flex flex-col justify-center text-xl font-bold cursor-pointer">
         Task Manager
       </Link>

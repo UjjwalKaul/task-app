@@ -2,6 +2,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useTask } from '../hooks';
 import TaskCard from '../components/TaskCard';
 import { deleteTask } from '../hooks';
+import Skeleton from '../components/Skeleton';
 export default function Task() {
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
@@ -22,7 +23,17 @@ export default function Task() {
   }
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex mt-[10rem] justify-center items-center p-4">
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+      </div>
+    );
   }
 
   if (!task) {
@@ -30,7 +41,7 @@ export default function Task() {
   }
 
   return (
-    <div>
+    <div className="flex justify-center mt-[15rem] w-full">
       <TaskCard
         key={task.id}
         id={task.id}

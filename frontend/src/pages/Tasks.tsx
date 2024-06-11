@@ -1,11 +1,22 @@
 import Appbar from '../components/Appbar';
+import Skeleton from '../components/Skeleton';
 import TaskCard from '../components/TaskCard';
 import useTasks from '../hooks';
 
 export default function Tasks() {
   const { loading, tasks } = useTasks();
   if (loading) {
-    return <div>loading..</div>;
+    return (
+      <div className="flex mt-[10rem] justify-center items-center p-4">
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+      </div>
+    );
   }
   return (
     <div className="container mx-auto p-4">
