@@ -2,6 +2,13 @@
 
 https://task-app-dun.vercel.app/
 
+### Login Credentials
+
+```sh
+email: test@gmail.com
+password: 1234567
+```
+
 ## Overview
 
 This project is structured into three main folders:
