@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { ChangeEvent, useState } from 'react';
-import { SignupInput } from '../../../common/types';
+import { SignupInput } from '../../types';
 import axios from 'axios';
 import { BACKEND_URL } from '../config';
 export default function Auth({ type }: { type: 'signup' | 'signin' }) {
