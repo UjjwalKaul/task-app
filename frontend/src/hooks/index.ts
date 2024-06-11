@@ -46,3 +46,11 @@ export function useTask(id: string) {
   }, [id]);
   return { loading, task };
 }
+
+export function deleteTask(id: number) {
+  return axios.delete(`${BACKEND_URL}/api/v1/task/${id}`, {
+    headers: {
+      Authorization: localStorage.getItem('token'),
+    },
+  });
+}
