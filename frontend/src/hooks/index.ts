@@ -26,6 +26,23 @@ export default function useTasks() {
         setLoading(false);
       });
   }, []);
-  console.log(tasks);
   return { loading, tasks };
+}
+
+export function useTask(id: string) {
+  const [loading, setLoading] = useState(true);
+  const [task, setTask] = useState<Task | undefined>(undefined);
+  useEffect(() => {
+    axios
+      .get(`${BACKEND_URL}/api/v1/task/${id}`, {
+        headers: {
+          Authorization: localStorage.getItem('token'),
+        },
+      })
+      .then((response) => {
+        setTask(response.data.task);
+        setLoading(false);
+      });
+  }, [id]);
+  return { loading, task };
 }
