@@ -1,11 +1,10 @@
-import { useParams } from 'react-router-dom'; // Assuming you're using react-router
+import { useParams } from 'react-router-dom';
 import { useTask } from '../hooks';
 import TaskCard from '../components/TaskCard';
 
 export default function Task() {
   const { id } = useParams<{ id: string }>();
 
-  // Ensure id is defined before calling useTask
   const { loading, task } = useTask(id ?? '');
 
   const handleComplete = (taskId: number) => {

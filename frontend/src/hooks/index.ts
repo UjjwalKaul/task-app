@@ -31,7 +31,7 @@ export default function useTasks() {
 
 export function useTask(id: string) {
   const [loading, setLoading] = useState(true);
-  const [task, setTask] = useState<Task | undefined>(undefined);
+  const [task, setTask] = useState<Task>();
   useEffect(() => {
     axios
       .get(`${BACKEND_URL}/api/v1/task/${id}`, {
